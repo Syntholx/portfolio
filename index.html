@@ -3,70 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Szymon Michałek — Frontend Developer</title>
+    <title>Szymon Michałek — C#/.NET Backend Developer</title>
     <meta
       name="description"
-      content="Portfolio Szymona Michałka - nauka frontend developmentu, rozwijane umiejętności i przyszłe projekty."
+      content="Portfolio Szymona Michałka - nauka C# i .NET, rozwijane umiejętności backendowe oraz przyszłe projekty."
     />
     <link rel="stylesheet" href="styles.css?v=2" />
   </head>
   <body>
     <nav>
       <strong>Szymon Michałek</strong>
-      <div class="nav-links">
-        <a href="#o-mnie">O mnie</a>
-        <a href="#skills">Umiejętności</a>
-        <a href="#projekty">Projekty</a>
-        <a href="#kontakt">Kontakt</a>
+      <div class="nav-controls">
+        <div class="nav-links">
+          <a href="#o-mnie" data-i18n="nav.about">O mnie</a>
+          <a href="#skills" data-i18n="nav.skills">Umiejętności</a>
+          <a href="#projekty" data-i18n="nav.projects">Projekty</a>
+          <a href="#kontakt" data-i18n="nav.contact">Kontakt</a>
+        </div>
+        <div class="language-switch" role="group" aria-label="Wybór języka">
+          <button type="button" data-language="pl" aria-label="Polski">PL</button>
+          <button type="button" data-language="nl" aria-label="Nederlands">NL</button>
+          <button type="button" data-language="en" aria-label="English">EN</button>
+        </div>
       </div>
     </nav>
     <main>
       <section class="hero">
-        <p class="eyebrow">Moja droga do frontendu</p>
-        <h1>Buduję frontend od podstaw - projekt po projekcie.</h1>
-        <p class="hero-description">
-          Uczę się tworzyć nowoczesne, dostępne i responsywne interfejsy. Tutaj
-          pokazuję swoją drogę oraz projekty, które tworzę w trakcie nauki.
+        <p class="eyebrow" data-i18n="hero.eyebrow">Moja droga do backendu</p>
+        <h1 data-i18n="hero.title">Rozwijam się w C# i .NET — projekt po projekcie.</h1>
+        <p class="hero-description" data-i18n="hero.description">
+          Uczę się tworzyć czytelne aplikacje backendowe i świadomie rozwiązywać
+          problemy za pomocą kodu. Tutaj pokazuję swoją drogę oraz projekty,
+          które tworzę w trakcie nauki.
         </p>
-        <a class="primary-link" href="#projekty">Zobacz projekty</a>
+        <a class="primary-link" href="#projekty" data-i18n="hero.link">Zobacz projekty</a>
       </section>
 
       <section class="about" id="o-mnie">
-        <h2>O mnie</h2>
-        <p>
-          Rozwijam się w kierunku frontend developmentu: HTML, CSS, JavaScript,
-          TypeScript i React. Moim celem jest budowanie dopracowanych,
-          dostępnych i responsywnych aplikacji webowych.
+        <h2 data-i18n="about.title">O mnie</h2>
+        <p data-i18n="about.description">
+          Rozwijam się w kierunku C#/.NET Backend Developmentu. Najważniejsze
+          są dla mnie logika, czytelny przepływ danych i świadome rozwiązywanie
+          problemów. Doświadczenie zdobyte przy HTML i CSS wykorzystuję do
+          lepszego rozumienia całych aplikacji webowych.
         </p>
       </section>
       <section class="skills" id="skills">
-        <h2>Aktualnie rozwijam</h2>
-        <p>
-          Buduję solidne podstawy frontendu i regularnie rozwijam swoją stronę.
+        <h2 data-i18n="skills.title">Aktualnie rozwijam</h2>
+        <p data-i18n="skills.description">
+          Buduję solidne podstawy C# i przygotowuję się do pracy z platformą
+          .NET oraz aplikacjami backendowymi.
         </p>
         <ul class="skill-list">
+          <li class="skill-item skill-item--current">C#</li>
+          <li class="skill-item">.NET</li>
+          <li class="skill-item" data-i18n="skills.logic">Logika programowania</li>
+          <li class="skill-item">Git</li>
           <li class="skill-item">HTML</li>
           <li class="skill-item">CSS</li>
-          <li class="skill-item">Responsywność</li>
-          <li class="skill-item">Dostępność</li>
-          <li class="skill-item skill-item--current">JavaScript</li>
-          <li class="skill-item">TypeScript</li>
-          <li class="skill-item">React</li>
         </ul>
       </section>
       <section id="projekty" class="projects">
-        <h2>Projekty</h2>
+        <h2 data-i18n="projects.title">Projekty</h2>
         <article class="project-card">
-          <div class="project-placeholder">Pierwszy projekt w trakcie</div>
-          <h3>Nowe projekty wkrótce</h3>
-          <p>Ta sekcja będzie rosła wraz z kolejnymi etapami nauki.</p>
+          <div class="project-placeholder" data-i18n="projects.placeholder">
+            Pierwszy projekt C#/.NET w przygotowaniu
+          </div>
+          <h3 data-i18n="projects.heading">Projekty backendowe wkrótce</h3>
+          <p data-i18n="projects.description">
+            Pojawią się tutaj samodzielne aplikacje wraz z opisem problemu,
+            wykorzystanych technologii, kodem źródłowym i wersją demonstracyjną.
+          </p>
         </article>
       </section>
       <section id="kontakt" class="contact">
-        <h2>Kontakt</h2>
-        <p>Chcesz się skontaktować lub zobaczyć mój kod?</p>
+        <h2 data-i18n="contact.title">Kontakt</h2>
+        <p data-i18n="contact.description">Chcesz się skontaktować lub zobaczyć mój kod?</p>
         <div class="contact-links">
-          <a href="mailto:contact@szymon-michalek.dev">E-mail</a>
+          <a href="mailto:contact@szymon-michalek.dev" data-i18n="contact.email">E-mail</a>
           <a
             href="https://github.com/Syntholx"
             target="_blank"
@@ -77,5 +91,6 @@
       </section>
     </main>
     <footer>© 2026 Szymon Michałek</footer>
+    <script src="script.js" defer></script>
   </body>
 </html>

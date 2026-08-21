@@ -36,10 +36,35 @@ nav {
   display: flex;
   gap: 20px;
 }
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
 .nav-links a {
   color: var(--color-text);
   text-decoration: none;
   transition: color 0.2s ease;
+}
+.language-switch {
+  display: flex;
+  gap: 4px;
+}
+.language-switch button {
+  border: 1px solid #3f3f46;
+  border-radius: 6px;
+  padding: 5px 7px;
+  color: var(--color-text-muted);
+  background-color: transparent;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.language-switch button:hover,
+.language-switch button[aria-pressed="true"] {
+  color: var(--color-text);
+  border-color: #8b5cf6;
+  background-color: #4c1d95;
 }
 .eyebrow {
   color: var(--color-text-muted);
@@ -168,6 +193,10 @@ a:focus-visible {
     gap: 12px;
     flex-wrap: wrap;
     justify-content: center;
+  }
+  .nav-controls {
+    flex-direction: column;
+    gap: 12px;
   }
   .hero h1 {
     font-size: 32px;
