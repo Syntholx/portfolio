@@ -8,7 +8,7 @@
       name="description"
       content="Portfolio Szymona Michałka - nauka C# i .NET, rozwijane umiejętności backendowe oraz przyszłe projekty."
     />
-    <link rel="stylesheet" href="styles.css?v=3" />
+    <link rel="stylesheet" href="styles.css?v=4" />
   </head>
   <body>
     <nav>
@@ -66,14 +66,28 @@
       <section id="projekty" class="projects">
         <h2 data-i18n="projects.title">Projekty</h2>
         <article class="project-card">
-          <div class="project-placeholder" data-i18n="projects.placeholder">
-            Pierwszy projekt C#/.NET w przygotowaniu
+          <div class="project-card-header">
+            <p class="project-kicker" data-i18n="projects.kicker">Pierwszy projekt backendowy</p>
+            <span class="project-status" data-i18n="projects.status">W trakcie rozwoju</span>
           </div>
-          <h3 data-i18n="projects.heading">Projekty backendowe wkrótce</h3>
+          <h3>Support Ticket Manager</h3>
           <p data-i18n="projects.description">
-            Pojawią się tutaj samodzielne aplikacje wraz z opisem problemu,
-            wykorzystanych technologii, kodem źródłowym i wersją demonstracyjną.
+            Konsolowa aplikacja pomagająca pracownikowi wsparcia szybko znaleźć
+            zgłoszenia wymagające najpilniejszej reakcji.
           </p>
+          <ul class="project-features">
+            <li data-i18n="projects.featureFiltering">Filtrowanie pilnych zgłoszeń</li>
+            <li data-i18n="projects.featureCritical">Wykrywanie zgłoszeń krytycznych</li>
+            <li data-i18n="projects.featureSorting">Sortowanie kolejki według priorytetu</li>
+          </ul>
+          <ul class="project-technologies" aria-label="Technologie">
+            <li>C#</li>
+            <li>.NET</li>
+            <li>LINQ</li>
+          </ul>
+          <span class="project-code-status" data-i18n="projects.codeSoon">
+            Kod źródłowy udostępnię po ukończeniu wersji alpha i dodaniu API.
+          </span>
         </article>
       </section>
       <section id="kontakt" class="contact">
@@ -91,6 +105,6 @@
       </section>
     </main>
     <footer>© 2026 Szymon Michałek</footer>
-    <script src="script.js" defer></script>
+    <script src="script.js?v=2" defer></script>
   </body>
 </html>

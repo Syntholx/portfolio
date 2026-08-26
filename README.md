@@ -24,3 +24,9 @@ Otwórz plik `index.html` w przeglądarce.
 
 - E-mail: contact@szymon-michalek.dev
 - GitHub: https://github.com/Syntholx
+
+## Projekty
+
+- Support Ticket Manager — konsolowe MVP w C#/.NET rozwijane etapami; obecnie
+  obsługuje model zgłoszenia, filtrowanie, wykrywanie krytycznego zgłoszenia,
+  liczenie otwartych zgłoszeń i sortowanie kolejki przez LINQ.
