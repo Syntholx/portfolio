@@ -27,6 +27,7 @@ Otwórz plik `index.html` w przeglądarce.
 
 ## Projekty
 
-- Support Ticket Manager — konsolowe MVP w C#/.NET rozwijane etapami; obecnie
-  obsługuje model zgłoszenia, filtrowanie, wykrywanie krytycznego zgłoszenia,
-  liczenie otwartych zgłoszeń i sortowanie kolejki przez LINQ.
+- Support Ticket Manager `v0.1.0` — ukończone pierwsze konsolowe MVP w C#/.NET.
+  Obsługuje filtrowanie i sortowanie kolejki, kontrolowane zmiany statusu oraz
+  priorytetu, podsumowanie i walidację danych zgłoszenia. Kod źródłowy:
+  https://github.com/Syntholx/support-ticket-manager/tree/v0.1.0
