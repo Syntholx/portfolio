@@ -8,7 +8,7 @@
       name="description"
       content="Portfolio Szymona Michałka - nauka C# i .NET, rozwijane umiejętności backendowe oraz przyszłe projekty."
     />
-    <link rel="stylesheet" href="styles.css?v=5" />
+    <link rel="stylesheet" href="styles.css?v=6" />
   </head>
   <body>
     <nav>
@@ -68,7 +68,7 @@
         <article class="project-card">
           <div class="project-card-header">
             <p class="project-kicker" data-i18n="projects.kicker">Pierwszy projekt backendowy</p>
-            <span class="project-status" data-i18n="projects.status">W trakcie rozwoju</span>
+            <span class="project-status" data-i18n="projects.status">MVP 1 ukończone · v0.1.0</span>
           </div>
           <h3>Support Ticket Manager</h3>
           <p data-i18n="projects.description">
@@ -79,15 +79,23 @@
             <li data-i18n="projects.featureFiltering">Filtrowanie pilnych zgłoszeń</li>
             <li data-i18n="projects.featureCritical">Wykrywanie zgłoszeń krytycznych</li>
             <li data-i18n="projects.featureSorting">Sortowanie kolejki według priorytetu</li>
+            <li data-i18n="projects.featureLifecycle">Kontrolowane zmiany statusu i priorytetu</li>
+            <li data-i18n="projects.featureValidation">Walidacja danych zgłoszenia</li>
           </ul>
           <ul class="project-technologies" aria-label="Technologie">
             <li>C#</li>
             <li>.NET</li>
             <li>LINQ</li>
           </ul>
-          <span class="project-code-status" data-i18n="projects.codeSoon">
-            Kod źródłowy udostępnię po ukończeniu wersji alpha i dodaniu API.
-          </span>
+          <a
+            class="project-code-status"
+            href="https://github.com/Syntholx/support-ticket-manager/tree/v0.1.0"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="projects.codeLink"
+          >
+            Zobacz kod źródłowy v0.1.0
+          </a>
         </article>
       </section>
       <section id="kontakt" class="contact">
@@ -105,6 +113,6 @@
       </section>
     </main>
     <footer>© 2026 Szymon Michałek</footer>
-    <script src="script.js?v=2" defer></script>
+    <script src="script.js?v=3" defer></script>
   </body>
 </html>
