@@ -27,9 +27,11 @@ Otwórz plik `index.html` w przeglądarce.
 
 ## Projekty
 
-- Support Ticket Manager `v0.3.0` — ukończone interaktywne MVP konsolowe w
+- Support Ticket Manager `v0.4.0` — ukończone interaktywne MVP konsolowe w
   C#/.NET. Obsługuje menu operacji, wyszukiwanie po `Id`, filtrowanie i
   sortowanie kolejki, kontrolowane zmiany statusu oraz priorytetu, podsumowanie
   i walidację danych zgłoszenia. Odpowiedzialności zostały rozdzielone między
-  model, zapytania, widok, sterowanie aplikacją i dane demonstracyjne. Kod źródłowy:
-  https://github.com/Syntholx/support-ticket-manager/tree/v0.3.0
+  model, zapytania, widok, sterowanie aplikacją i dane demonstracyjne. Użytkownik
+  może tworzyć zgłoszenia z automatycznym `Id`, a status `Closed` tworzy archiwum
+  oddzielone od aktywnej kolejki. Kod źródłowy:
+  https://github.com/Syntholx/support-ticket-manager/tree/v0.4.0
