@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Demonstracyjny interfejs Support Ticket Manager. Przykładowe dane, bez API i bazy danych.">
+<meta name="robots" content="noindex"><title>TSM — demo interfejsu</title>
+<link rel="stylesheet" href="demo.css?v=1"><script src="demo.js?v=1" defer></script>
+</head>
+<body>
+<a class="skip" href="#content">Przejdź do treści</a>
+<div class="demo-banner"><span><strong>DEMO INTERFEJSU</strong> Przykładowe dane · bez API i bazy · zmiany znikają po odświeżeniu. Nie wpisuj prawdziwych danych.</span><a href="../index.html#projekty">← Portfolio</a></div>
+<div class="shell">
+<aside class="sidebar"><a class="brand" href="./"><strong>TSM<span>·</span></strong><small>Support Ticket Manager</small></a><p class="nav-label">PRZESTRZEŃ ROBOCZA</p><nav id="navigation" aria-label="Nawigacja demo"></nav><div class="sidebar-bottom"><span class="avatar" id="avatar">SM</span><div><strong id="person">Szymon</strong><small id="person-role">Przykładowy użytkownik</small></div></div><p class="sidebar-note">Podgląd produktu w rozwoju.<br>Role są wyłącznie symulacją.</p></aside>
+<div class="workspace"><header class="topbar"><span class="breadcrumb">TSM / <span id="breadcrumb">Pulpit</span></span><label class="role-control">Widok demo<select id="role"><option value="user">Użytkownik</option><option value="support">Pracownik wsparcia</option></select></label></header>
+<main id="content" tabindex="-1">
+<section class="page-heading"><div><p class="eyebrow">SUPPORT TICKET MANAGER</p><h1 id="heading">Cześć, Szymon!</h1><p id="subtitle">W czym możemy Ci pomóc?</p></div><button class="primary" id="new-ticket" type="button">＋ Nowe zgłoszenie</button></section>
+<section class="welcome card" id="welcome"><div><span class="pill">Jesteśmy tu, żeby pomóc</span><h2>Potrzebujesz pomocy?</h2><p>Opisz problem, a zespół wsparcia zajmie się Twoim zgłoszeniem.</p><button class="primary" id="welcome-create" type="button">＋ Utwórz zgłoszenie</button></div><div class="welcome-art" aria-hidden="true"><div class="art-orbit"></div><div class="art-window"><div class="art-dots">● ● ●</div><div class="art-line"></div><div class="art-line short"></div><div class="art-ticket">✓ <span>Pomoc jest blisko</span></div></div><span class="art-chat">···</span></div></section>
+<section class="stats" id="stats" aria-label="Podsumowanie kolejki"></section>
+<section class="filters" id="filters" aria-label="Filtrowanie zgłoszeń"><label><span>Szukaj zgłoszenia</span><input id="search" type="search" placeholder="Szukaj po ID lub tytule…"></label><label><span>Status</span><select id="status-filter"><option value="all">Wszystkie statusy</option><option value="Open">Otwarte</option><option value="InProgress">W trakcie</option><option value="Closed">Zamknięte</option></select></label><label><span>Priorytet</span><select id="priority-filter"><option value="all">Każdy priorytet</option><option value="5">5 — Krytyczny</option><option value="4">4 — Pilny</option><option value="3">3 — Wysoki</option><option value="2">2 — Normalny</option><option value="1">1 — Niski</option></select></label></section>
+<div class="queue-layout" id="queue-layout"><section class="card queue"><div class="section-heading"><h2 id="list-heading">Twoje ostatnie zgłoszenia</h2><span id="result-count"></span></div><div class="table-scroll"><table><thead><tr><th scope="col">ID</th><th scope="col">Zgłoszenie</th><th scope="col">Status</th><th scope="col">Priorytet</th></tr></thead><tbody id="tickets"></tbody></table></div><p class="empty" id="empty" hidden>Brak zgłoszeń pasujących do tego widoku.</p></section><section class="card details" id="details" aria-label="Szczegóły zgłoszenia" hidden></section></div>
+<aside class="tip card"><span class="tip-icon" aria-hidden="true">i</span><div><h2>Jak opisać problem?</h2><p>Napisz, co się stało i jaki efekt chcesz uzyskać. Nie podawaj haseł ani danych wrażliwych.</p></div></aside>
+<footer><span>TSM · MVP 7 · niezależne demo UI z pomocą AI</span><button id="reset" class="text-button" type="button">Przywróć przykładowe dane</button></footer>
+</main></div></div>
+<div id="notice" class="notice" role="status" aria-live="polite"></div>
+<dialog id="create-dialog" aria-labelledby="dialog-title"><form id="create-form"><div class="section-heading"><div><p class="eyebrow">NOWE ZGŁOSZENIE</p><h2 id="dialog-title">W czym możemy pomóc?</h2></div><button id="cancel" class="close-button" type="button" aria-label="Zamknij formularz">×</button></div><p class="muted">Formularz demo. Dane nie są wysyłane na serwer.</p><label>Tytuł<input name="title" required maxlength="120" placeholder="Krótko opisz problem"></label><label>Opis problemu<textarea name="description" required maxlength="2000" rows="5" placeholder="Co się wydarzyło? Jaki jest oczekiwany efekt?"></textarea></label><label>Priorytet<select name="priority"><option value="1">1 — Niski</option><option value="2">2 — Normalny</option><option value="3" selected>3 — Wysoki</option><option value="4">4 — Pilny</option><option value="5">5 — Krytyczny</option></select></label><p id="form-error" role="alert"></p><button class="primary" type="submit">Utwórz zgłoszenie</button></form></dialog>
+<noscript><p>To demo wymaga JavaScript. <a href="../index.html">Wróć do portfolio</a>.</p></noscript>
+</body></html>

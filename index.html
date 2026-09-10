@@ -68,18 +68,18 @@
         <article class="project-card">
           <div class="project-card-header">
             <p class="project-kicker" data-i18n="projects.kicker">Pierwszy projekt backendowy</p>
-            <span class="project-status" data-i18n="projects.status">MVP 5 ukończone · v0.5.0</span>
+            <span class="project-status" data-i18n="projects.status">MVP 7 ukończone · v0.7.0</span>
           </div>
           <h3>Support Ticket Manager</h3>
           <p data-i18n="projects.description">
-            Konsolowa aplikacja pomagająca pracownikowi wsparcia szybko znaleźć
-            zgłoszenia wymagające najpilniejszej reakcji.
+            Aplikacja C#/.NET z API do tworzenia i obsługi zgłoszeń, walidacją
+            oraz testami. Osobne demo interfejsu korzysta z przykładowych danych.
           </p>
           <ul class="project-features">
             <li data-i18n="projects.featureFiltering">Filtrowanie pilnych zgłoszeń</li>
             <li data-i18n="projects.featureCritical">Wykrywanie zgłoszeń krytycznych</li>
             <li data-i18n="projects.featureSorting">Sortowanie kolejki według priorytetu</li>
-            <li data-i18n="projects.featureMenu">Interaktywne menu i wybór operacji</li>
+            <li data-i18n="projects.featureMenu">API HTTP oraz zachowana aplikacja konsolowa</li>
             <li data-i18n="projects.featureSearch">Wyszukiwanie zgłoszeń po ID</li>
             <li data-i18n="projects.featureLifecycle">Kontrolowane zmiany statusu i priorytetu</li>
             <li data-i18n="projects.featureValidation">Walidacja danych zgłoszenia</li>
@@ -87,23 +87,26 @@
             <li data-i18n="projects.featureCreation">Tworzenie zgłoszeń z automatycznym ID</li>
             <li data-i18n="projects.featureArchive">Aktywna kolejka i automatyczne archiwum</li>
             <li data-i18n="projects.featureService">Tworzenie zgłoszeń przez serwis niezależny od konsoli</li>
-            <li data-i18n="projects.featureTests">22 testy jednostkowe reguł i tworzenia zgłoszeń</li>
+            <li data-i18n="projects.featureTests">60 testów: 29 jednostkowych i 31 integracyjnych API</li>
           </ul>
           <ul class="project-technologies" aria-label="Technologie">
             <li>C#</li>
             <li>.NET</li>
+            <li>ASP.NET Core</li>
             <li>LINQ</li>
             <li>xUnit</li>
           </ul>
           <a
             class="project-code-status"
-            href="https://github.com/Syntholx/support-ticket-manager/tree/v0.5.0"
+            href="https://github.com/Syntholx/support-ticket-manager/tree/v0.7.0"
             target="_blank"
             rel="noopener noreferrer"
             data-i18n="projects.codeLink"
           >
-            Zobacz kod źródłowy v0.5.0
+            Zobacz kod źródłowy v0.7.0
           </a>
+          <p><a class="primary-link" href="tsm-demo/index.html" data-i18n="projects.demoLink">Wypróbuj demo interfejsu (PL) →</a></p>
+          <p data-i18n="projects.demoNote">Demo UI przygotowane z pomocą AI: przykładowe dane, symulowane role, bez API i bazy. Zmiany znikają po odświeżeniu. Backend działa lokalnie, nie produkcyjnie.</p>
         </article>
       </section>
       <section id="kontakt" class="contact">
@@ -121,6 +124,6 @@
       </section>
     </main>
     <footer>© 2026 Szymon Michałek</footer>
-    <script src="script.js?v=7" defer></script>
+    <script src="script.js?v=9" defer></script>
   </body>
 </html>
