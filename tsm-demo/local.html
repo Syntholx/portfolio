@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>TSM — lokalny panel SQL</title>
+  <link rel="stylesheet" href="demo.css">
+  <link rel="stylesheet" href="local.css">
+  <script src="local.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#content">Przejdź do treści</a>
+  <div class="demo-banner"><span><strong>LOKALNE API · SQL</strong> Rzeczywiste dane lokalnej bazy · odczyt i tworzenie · bez logowania.</span><a href="./index.html">Otwórz demo</a></div>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="./local.html"><strong>TSM<span>·</span></strong><small>Support Ticket Manager</small></a>
+      <p class="nav-label">PANEL WSPARCIA</p>
+      <nav aria-label="Widok zgłoszeń" id="navigation">
+        <button type="button" data-page="queue" aria-current="page">☷ Kolejka zgłoszeń</button>
+        <button type="button" data-page="archive">▤ Archiwum</button>
+      </nav>
+      <p class="sidebar-note">Połączenie lokalne z API.<br>Brak kont i przypisywania pracowników.</p>
+    </aside>
+    <div class="workspace">
+      <header class="topbar"><span class="breadcrumb">TSM / lokalna baza SQL</span><span class="pill">Odczyt i tworzenie</span></header>
+      <main id="content" tabindex="-1">
+        <section class="page-heading"><div><p class="eyebrow">PANEL WSPARCIA</p><h1 id="heading">Kolejka zgłoszeń</h1><p id="subtitle">Niezamknięte: oczekujące i w trakcie obsługi.</p></div><div class="heading-actions"><button id="refresh" class="secondary" type="button">Odśwież dane</button><button id="new-ticket" class="primary" type="button">＋ Nowe zgłoszenie</button></div></section>
+        <p id="create-success" class="success-box" role="status" aria-live="polite" hidden></p>
+        <p id="operation-message" role="status" aria-live="polite"></p>
+        <p id="connection-state" role="status" aria-live="polite">Przygotowywanie połączenia…</p>
+        <p id="connection-error" class="error-box" role="alert" hidden></p>
+        <section id="stats" class="stats" aria-label="Podsumowanie kolejki"></section>
+        <section class="filters" aria-label="Filtrowanie">
+          <label>Szukaj zgłoszenia<input id="search" type="search" placeholder="ID lub tytuł…"></label>
+          <label>Status<select id="status-filter"><option value="all">Wszystkie niezamknięte</option><option value="Open">Oczekujące</option><option value="InProgress">W trakcie</option></select></label>
+          <label>Priorytet<select id="priority-filter"><option value="all">Każdy priorytet</option><option value="5">5 — Krytyczny</option><option value="4">4 — Pilny</option><option value="3">3 — Wysoki</option><option value="2">2 — Normalny</option><option value="1">1 — Niski</option></select></label>
+        </section>
+        <div id="queue-layout" class="queue-layout">
+          <section class="card queue" aria-label="Zgłoszenia">
+            <div class="section-heading"><h2 id="list-heading">Niezamknięte zgłoszenia</h2><span id="result-count">—</span></div>
+            <div class="table-scroll"><table><thead><tr><th scope="col">ID</th><th scope="col">Zgłoszenie</th><th scope="col">Status</th><th scope="col">Priorytet</th></tr></thead><tbody id="tickets"></tbody></table></div>
+            <p id="empty" class="empty" hidden></p>
+          </section>
+          <section id="details" class="card details" aria-label="Szczegóły zgłoszenia" aria-live="polite" hidden></section>
+        </div>
+        <aside class="tip card"><span class="tip-icon" aria-hidden="true">i</span><div><h2>Dane pochodzą z SQL przez API</h2><p>Tworzenie, zmiany statusu i priorytetu są zapisywane w SQL. Zamknięte zgłoszenia znajdziesz w archiwum, a ponownie otwarte wracają do kolejki. Nie wpisuj danych wrażliwych.</p></div></aside>
+        <footer><span>Lokalny etap integracji · interfejs przygotowany z pomocą AI</span><span>API: https://localhost:7280</span></footer>
+      </main>
+    </div>
+  </div>
+  <dialog id="create-dialog" aria-labelledby="dialog-title">
+    <form id="create-form">
+      <div class="section-heading"><h2 id="dialog-title">Nowe zgłoszenie</h2><button id="cancel-create" class="close-button" type="button" aria-label="Zamknij formularz">×</button></div>
+      <p class="muted">Dane zostaną wysłane do lokalnego API i zapisane w SQL. Bez danych wrażliwych.</p>
+      <fieldset id="create-fields">
+        <label>Tytuł<input name="title" id="create-title" required autofocus></label>
+        <label>Opis<textarea name="description" id="create-description" required rows="5"></textarea></label>
+        <label>Priorytet<select name="priority" id="create-priority"><option value="1">1 — Niski</option><option value="2">2 — Normalny</option><option value="3" selected>3 — Wysoki</option><option value="4">4 — Pilny</option><option value="5">5 — Krytyczny</option></select></label>
+      </fieldset>
+      <p id="form-error" role="alert"></p>
+      <button id="submit-create" class="primary" type="submit">Utwórz zgłoszenie</button>
+    </form>
+  </dialog>
+  <noscript>Do obsługi API wymagany jest JavaScript.</noscript>
+</body>
+</html>
