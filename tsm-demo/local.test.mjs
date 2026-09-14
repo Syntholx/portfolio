@@ -11,7 +11,7 @@ function element(id) {
     hidden: false, disabled: false, innerHTML: '', textContent: '',
     addEventListener() {}, setAttribute() {}, removeAttribute() {},
     focus() {}, showModal() { this.open = true; }, close() { this.open = false; },
-    reset() { element('create-title').value = ''; element('create-description').value = ''; element('create-priority').value = '3'; },
+    reset() { element('create-title').value = ''; element('create-description').value = ''; },
     replaceChildren() { this.innerHTML = ''; },
     insertAdjacentHTML(position, html) { this.innerHTML += html; },
     querySelectorAll() { return []; }, querySelector() { return null; },
@@ -55,7 +55,7 @@ const context = vm.createContext({
     if (options.method === 'POST') {
       if (postMode === 'deferred') await new Promise(resolve => { releasePost = resolve; });
       if (postMode === 'invalid') return { status: 400, json: async () => ({message: 'Nieprawidłowy tytuł <b>test</b>'}) };
-      created = { id: 10, ...JSON.parse(options.body), status: 'Open' };
+      created = { id: 10, ...JSON.parse(options.body), priority: 2, status: 'Open' };
       return { status: 201, json: async () => created };
     }
     const data = url.endsWith('/archived') ? (empty ? [] : [closed, ...(open.status === 'Closed' ? [open] : [])])
@@ -95,7 +95,6 @@ assert.ok(calls.every(call => call.options.method === 'GET'));
 const submit = () => vm.runInContext('submitTicket({preventDefault() {}})', context);
 element('create-title').value = '   ';
 element('create-description').value = 'Opis';
-element('create-priority').value = '3';
 let before = calls.length;
 await submit();
 assert.equal(calls.length, before);
@@ -128,7 +127,9 @@ assert.ok(element('tickets').innerHTML.includes('#10'));
 assert.equal(element('submit-create').disabled, false);
 const posted = calls.find(call => call.options.method === 'POST');
 assert.equal(posted.options.headers['Content-Type'], 'application/json');
-assert.deepEqual(JSON.parse(posted.options.body), {title: 'Nowe zgłoszenie', description: 'Opis', priority: 3});
+assert.deepEqual(JSON.parse(posted.options.body), {title: 'Nowe zgłoszenie', description: 'Opis'});
+assert.equal(created.priority, 2);
+assert.ok(!elements.has('create-priority'), 'Formularz nie powinien odczytywać pola priorytetu.');
 await vm.runInContext('showDetails(7)', context);
 assert.ok(element('details').innerHTML.includes('id="start-ticket"'));
 for (const code of [404, 409, 500]) {

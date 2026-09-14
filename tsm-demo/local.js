@@ -271,9 +271,8 @@ async function submitTicket(event) {
   if (submitting || starting) return;
   const title = el("create-title").value.trim();
   const description = el("create-description").value.trim();
-  const priority = Number(el("create-priority").value);
-  if (!title || !description || !Number.isInteger(priority) || priority < 1 || priority > 5) {
-    el("form-error").textContent = "Podaj tytuł, opis i priorytet od 1 do 5. Same spacje nie wystarczą.";
+  if (!title || !description) {
+    el("form-error").textContent = "Podaj tytuł i opis. Same spacje nie wystarczą.";
     return;
   }
   submitting = true;
@@ -285,7 +284,7 @@ async function submitTicket(event) {
   el("cancel-create").disabled = true;
   el("create-form").setAttribute("aria-busy", "true");
   try {
-    const ticket = await createTicket({ title, description, priority });
+    const ticket = await createTicket({ title, description });
     el("create-dialog").close();
     el("create-form").reset();
     el("create-success").textContent = `Utworzono zgłoszenie #${ticket.id}. Zapisano w SQL.`;
