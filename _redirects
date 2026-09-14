@@ -1,0 +1,5 @@
+# Keep UI source in Git, but retire its public routes.
+/tsm-demo /#projekty 302
+/tsm /#projekty 302
+/tsm-demo/* /#projekty 302
+/tsm/* /#projekty 302

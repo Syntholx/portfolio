@@ -1,0 +1,12 @@
+.error-box { padding: 14px; border: 1px solid #efb6b6; border-radius: 7px; background: #fff0f0; color: #942c2c; line-height: 1.6; }
+#connection-state { color: var(--muted); font-size: 12px; margin: 0 0 18px; }
+.details .section-heading { padding: 0; }
+.details .badge { margin-right: 6px; }
+.sidebar-note { margin-top: auto; }
+button:disabled { cursor: wait; }
+.heading-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.success-box { padding: 14px; border: 1px solid #a0d8c8; background: #e9faf3; color: #16604e; border-radius: 7px; }
+#create-fields { border: 0; margin: 0; padding: 0; min-width: 0; }
+#priority-form { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); }
+#priority-form label { margin-bottom: 10px; }
+.details > button { margin: 8px 8px 0 0; }
