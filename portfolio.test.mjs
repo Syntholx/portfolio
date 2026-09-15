@@ -16,6 +16,13 @@ for (const [, key] of html.matchAll(/data-i18n="([^"]+)"/g)) {
 }
 assert.ok(!html.includes('tsm-demo'));
 assert.ok(html.includes('<h3>OrderFlow</h3>'));
+assert.equal((html.match(/class="project-card"/g) || []).length, 2);
+assert.ok(html.includes('class="projects-grid"'));
+assert.ok(!html.includes('project-features'));
+assert.ok(!html.includes('101 test'));
+const css = readFileSync(new URL('./styles.css', import.meta.url), 'utf8');
+assert.ok(css.includes('repeat(2, minmax(0, 1fr))'));
+assert.ok(css.includes('grid-template-columns: 1fr'));
 assert.ok(!html.includes('github.com/Syntholx/order-flow'));
 assert.ok(html.includes('tree/v1.0.0'));
 assert.ok(!script.includes('v0.7.0'));

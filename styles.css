@@ -91,15 +91,19 @@ nav {
   max-width: 760px;
   color: var(--color-text-muted);
 }
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
 .project-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
   border: 1px solid #3f3f46;
   border-radius: 12px;
   padding: 20px;
   background-color: #1c1c1c;
-  max-width: 760px;
-}
-.project-card + .project-card {
-  margin-top: 24px;
 }
 .project-card-header {
   display: flex;
@@ -129,9 +133,13 @@ nav {
   margin-top: 0;
   color: var(--color-text-muted);
 }
-.project-features {
-  margin: 20px 0;
-  padding-left: 20px;
+.project-card .project-note {
+  font-size: 12px;
+  margin: 12px 0 0;
+}
+.project-card .project-code-status {
+  margin-top: auto;
+  align-self: flex-start;
 }
 .project-technologies {
   display: flex;
@@ -233,6 +241,11 @@ a:focus-visible {
   color: #ede9fe;
 }
 
+@media (max-width: 760px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
 @media (max-width: 600px) {
   nav {
     padding: 16px;

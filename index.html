@@ -8,7 +8,7 @@
       name="description"
       content="Portfolio Szymona Michałka - nauka C# i .NET, rozwijane umiejętności backendowe oraz przyszłe projekty."
     />
-    <link rel="stylesheet" href="styles.css?v=7" />
+    <link rel="stylesheet" href="styles.css?v=8" />
   </head>
   <body>
     <nav>
@@ -65,54 +65,26 @@
       </section>
       <section id="projekty" class="projects">
         <h2 data-i18n="projects.title">Projekty</h2>
-        <article class="project-card">
-          <div class="project-card-header">
-            <p class="project-kicker" data-i18n="projects.kicker">Pierwszy projekt backendowy</p>
-            <span class="project-status" data-i18n="projects.status">Projekt backendowy · v1.0.0</span>
-          </div>
-          <h3>Support Ticket Manager</h3>
-          <p data-i18n="projects.description">API do obsługi zgłoszeń wsparcia z trwałym zapisem w SQL Server, logowaniem i kontrolą dostępu. Ukończony etap projektu edukacyjnego, uruchamiany lokalnie.</p>
-          <ul class="project-features">
-            <li data-i18n="projects.featureFiltering">Własne zgłoszenia użytkownika i pełna kolejka wsparcia</li>
-            <li data-i18n="projects.featureCritical">Logowanie i role z ASP.NET Core Identity</li>
-            <li data-i18n="projects.featureSorting">Sortowanie aktywnej kolejki według priorytetu</li>
-            <li data-i18n="projects.featureMenu">ASP.NET Core Minimal API i odpowiedzi JSON</li>
-            <li data-i18n="projects.featureSearch">Odczyt szczegółów z kontrolą właściciela</li>
-            <li data-i18n="projects.featureLifecycle">Rozpoczęcie, zamknięcie i ponowne otwarcie zgłoszenia</li>
-            <li data-i18n="projects.featureValidation">Walidacja danych i ograniczenia w bazie</li>
-            <li data-i18n="projects.featureArchitecture">Rozdzielenie endpointów, serwisu i reguł</li>
-            <li data-i18n="projects.featureCreation">Automatyczny ID, autor i domyślny priorytet 2</li>
-            <li data-i18n="projects.featureArchive">Aktywna kolejka oraz archiwum</li>
-            <li data-i18n="projects.featureService">Trwały zapis SQL Server przez EF Core</li>
-            <li data-i18n="projects.featureTests">101 testów reguł, API, SQL i uprawnień</li>
-          </ul>
-          <ul class="project-technologies" aria-label="Technologie">
-            <li>C#</li>
-            <li>.NET</li>
-            <li>ASP.NET Core</li>
-            <li>EF Core</li>
-            <li>SQL Server</li>
-            <li>Identity</li>
-            <li>xUnit</li>
-          </ul>
-          <a
-            class="project-code-status"
-            href="https://github.com/Syntholx/support-ticket-manager/tree/v1.0.0"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-i18n="projects.codeLink"
-          >Zobacz kod i dokumentację v1.0.0</a>
-
-          <p data-i18n="projects.demoNote">Projekt rozwijany z pomocą mentora AI. API uruchamiane lokalnie; bez publicznego demo i wdrożenia produkcyjnego. Instrukcja uruchomienia i ograniczenia znajdują się w README.</p>
-        </article>
-        <article class="project-card">
-          <div class="project-card-header">
-            <p class="project-kicker" data-i18n="orderFlow.kicker">Drugi projekt szkoleniowy</p>
-            <span class="project-status" data-i18n="orderFlow.status">W trakcie tworzenia</span>
-          </div>
-          <h3>OrderFlow</h3>
-          <p data-i18n="orderFlow.description">Pracuję nad backendem symulowanego sklepu internetowego w C#/.NET. To mój drugi projekt szkoleniowy, rozwijany z większym naciskiem na samodzielną pracę.</p>
-        </article>
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-card-header"><span class="project-status">v1.0.0</span></div>
+            <h3>Support Ticket Manager</h3>
+            <p data-i18n="projects.description">Backend systemu zgłoszeń wsparcia. Umożliwia tworzenie i obsługę zgłoszeń, logowanie oraz dostęp zależny od roli użytkownika.</p>
+            <ul class="project-technologies" aria-label="Technologie">
+              <li>C#</li><li>ASP.NET Core</li><li>EF Core</li><li>SQL Server</li>
+            </ul>
+            <a class="project-code-status" href="https://github.com/Syntholx/support-ticket-manager/tree/v1.0.0" target="_blank" rel="noopener noreferrer" data-i18n="projects.codeLink">Kod i dokumentacja ↗</a>
+            <p class="project-note" data-i18n="projects.demoNote">Projekt edukacyjny · uruchamiany lokalnie</p>
+          </article>
+          <article class="project-card">
+            <div class="project-card-header"><span class="project-status" data-i18n="orderFlow.status">W trakcie tworzenia</span></div>
+            <h3>OrderFlow</h3>
+            <p data-i18n="orderFlow.description">Backend symulowanego sklepu internetowego. Projekt rozwijany wokół katalogu produktów, koszyka i obsługi zamówień.</p>
+            <ul class="project-technologies" aria-label="Technologie">
+              <li>C#</li><li>.NET</li>
+            </ul>
+          </article>
+        </div>
       </section>
       <section id="kontakt" class="contact">
         <h2 data-i18n="contact.title">Kontakt</h2>
@@ -129,6 +101,6 @@
       </section>
     </main>
     <footer>© 2026 Szymon Michałek</footer>
-    <script src="script.js?v=11" defer></script>
+    <script src="script.js?v=12" defer></script>
   </body>
 </html>
