@@ -1,5 +1,8 @@
 const translations = {
   pl: {
+    "orderFlow.kicker": "Drugi projekt szkoleniowy",
+    "orderFlow.status": "W trakcie tworzenia",
+    "orderFlow.description": "Pracuję nad backendem symulowanego sklepu internetowego w C#/.NET. To mój drugi projekt szkoleniowy, rozwijany z większym naciskiem na samodzielną pracę.",
     pageTitle: "Szymon Michałek — C#/.NET Backend Developer",
     pageDescription:
       "Portfolio Szymona Michałka - nauka C# i .NET, rozwijane umiejętności backendowe oraz przyszłe projekty.",
@@ -45,6 +48,9 @@ const translations = {
     "contact.email": "E-mail",
   },
   nl: {
+    "orderFlow.kicker": "Tweede leerproject",
+    "orderFlow.status": "In ontwikkeling",
+    "orderFlow.description": "Ik werk aan de backend van een gesimuleerde webwinkel in C#/.NET. Dit is mijn tweede leerproject, met meer nadruk op zelfstandig werken.",
     pageTitle: "Szymon Michałek — C#/.NET Backend Developer",
     pageDescription:
       "Portfolio van Szymon Michałek - C# en .NET, backendvaardigheden en toekomstige projecten.",
@@ -90,6 +96,9 @@ const translations = {
     "contact.email": "E-mail",
   },
   en: {
+    "orderFlow.kicker": "Second learning project",
+    "orderFlow.status": "In development",
+    "orderFlow.description": "I am building the backend of a simulated online shop in C#/.NET. This is my second learning project, with a greater focus on independent work.",
     pageTitle: "Szymon Michałek — C#/.NET Backend Developer",
     pageDescription:
       "Szymon Michałek's portfolio - learning C# and .NET, developing backend skills, and building future projects.",

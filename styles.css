@@ -98,6 +98,9 @@ nav {
   background-color: #1c1c1c;
   max-width: 760px;
 }
+.project-card + .project-card {
+  margin-top: 24px;
+}
 .project-card-header {
   display: flex;
   justify-content: space-between;

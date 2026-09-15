@@ -15,6 +15,8 @@ for (const [, key] of html.matchAll(/data-i18n="([^"]+)"/g)) {
   }
 }
 assert.ok(!html.includes('tsm-demo'));
+assert.ok(html.includes('<h3>OrderFlow</h3>'));
+assert.ok(!html.includes('github.com/Syntholx/order-flow'));
 assert.ok(html.includes('tree/v1.0.0'));
 assert.ok(!script.includes('v0.7.0'));
 const redirects = readFileSync(new URL('./_redirects', import.meta.url), 'utf8');
