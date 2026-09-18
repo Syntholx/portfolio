@@ -1,6 +1,8 @@
 # Portfolio — Szymon Michałek
 
-Osobista strona prezentująca naukę C#/.NET i projekty backendowe.
+Osobista strona prezentująca naukę frontendu aplikacyjnego: HTML, CSS i JavaScript.
+Jedynym prezentowanym projektem pozostaje backend Support Ticket Manager.
+OrderFlow usunięto z portfolio; repozytorium projektu pozostaje bez zmian.
 HTML, CSS i JavaScript; treści w językach PL/NL/EN.
 
 ## Projekt TSM
@@ -40,7 +42,7 @@ Dalsze wykorzystanie wymaga osobnego zadania integracji i zabezpieczeń.
 
 ## Weryfikacja
 
-`node --check script.js` oraz `node tsm-demo/local.test.mjs`.
+`node --check script.js`, `node portfolio.test.mjs` oraz `node tsm-demo/local.test.mjs`.
 Testy panelu korzystają z atrap; nie potwierdzają działania z chronionym API.
 
 ## Kontakt
