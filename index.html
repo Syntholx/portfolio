@@ -8,7 +8,7 @@
       name="description"
       content="Portfolio Szymona Michałka — nauka frontendu aplikacyjnego, HTML, CSS i JavaScript oraz projekt Support Ticket Manager."
     />
-    <link rel="stylesheet" href="styles.css?v=9" />
+    <link rel="stylesheet" href="styles.css?v=10" />
   </head>
   <body>
     <nav>
@@ -40,21 +40,36 @@
         <p data-i18n="about.description">Skupiam się na frontendzie aplikacyjnym: interakcjach, stanie i czytelnych interfejsach. Doświadczenie z C# i budowy API pomaga mi rozumieć przepływ danych między przeglądarką a backendem.</p>
       </section>
       <section class="skills" id="skills">
-        <h2 data-i18n="skills.title">Aktualnie rozwijam</h2>
+        <h2 data-i18n="skills.title">Technologie i kierunek nauki</h2>
         <p data-i18n="skills.description">Ćwiczę HTML, CSS i JavaScript: responsywne układy, dostępność oraz logikę interfejsu.</p>
-        <ul class="skill-list">
-          <li class="skill-item skill-item--current">JavaScript</li>
-          <li class="skill-item" data-i18n="skills.logic">Logika programowania</li>
-          <li class="skill-item">Git</li>
-          <li class="skill-item">HTML</li>
-          <li class="skill-item">CSS</li>
-        </ul>
+        <div class="skills-grid">
+          <div class="skill-group" aria-labelledby="current-skills">
+            <h3 id="current-skills" data-i18n="skills.current">Aktualnie rozwijam</h3>
+            <p class="skill-group-note" data-i18n="skills.focus">Teraz: JavaScript — DOM, zdarzenia i stan interfejsu.</p>
+            <ul class="skill-list">
+              <li class="skill-item skill-item--current">JavaScript</li>
+              <li class="skill-item">HTML</li>
+              <li class="skill-item">CSS</li>
+              <li class="skill-item">Git</li>
+            </ul>
+          </div>
+          <div class="skill-group skill-group--planned" aria-labelledby="planned-skills">
+            <h3 id="planned-skills" data-i18n="skills.next">Kolejne kroki</h3>
+            <p class="skill-group-note" data-i18n="skills.plannedNote">Plan nauki — nie deklaracja obecnych umiejętności.</p>
+            <ul class="skill-list">
+              <li class="skill-item">TypeScript</li>
+              <li class="skill-item">React</li>
+              <li class="skill-item" data-i18n="skills.api">Integracja API</li>
+              <li class="skill-item" data-i18n="skills.testing">Testowanie</li>
+            </ul>
+          </div>
+        </div>
       </section>
       <section id="projekty" class="projects">
         <h2 data-i18n="projects.title">Projekty</h2>
         <div class="projects-grid">
           <article class="project-card">
-            <div class="project-card-header"><span class="project-status">v1.0.0</span></div>
+            <div class="project-card-header"><span class="project-kicker" data-i18n="projects.kicker">Projekt backendowy</span><span class="project-status">v1.0.0</span></div>
             <h3>Support Ticket Manager</h3>
             <p data-i18n="projects.description">Backend systemu zgłoszeń wsparcia. Umożliwia tworzenie i obsługę zgłoszeń, logowanie oraz dostęp zależny od roli użytkownika.</p>
             <ul class="project-technologies" aria-label="Technologie">
@@ -80,6 +95,6 @@
       </section>
     </main>
     <footer>© 2026 Szymon Michałek</footer>
-    <script src="script.js?v=13" defer></script>
+    <script src="script.js?v=14" defer></script>
   </body>
 </html>

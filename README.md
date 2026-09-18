@@ -5,6 +5,11 @@ Jedynym prezentowanym projektem pozostaje backend Support Ticket Manager.
 OrderFlow usunięto z portfolio; repozytorium projektu pozostaje bez zmian.
 HTML, CSS i JavaScript; treści w językach PL/NL/EN.
 
+Sekcja technologii oddziela aktualną praktykę od planowanych tematów.
+JavaScript jest bieżącym tematem, a TypeScript, React, API i testowanie planem,
+nie deklaracją opanowanych umiejętności. Układ grup przechodzi na jedną kolumnę
+na węższych ekranach. TSM pozostaje jedyną kartą projektu.
+
 ## Projekt TSM
 
 Portfolio prezentuje Support Ticket Manager v1.0.0: lokalne API z SQL Server,

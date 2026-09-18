@@ -22,6 +22,15 @@ for (const language of ['pl', 'nl', 'en']) {
   assert.match(translations[language]['skills.description'], /JavaScript/);
 }
 assert.equal((html.match(/class="project-card"/g) || []).length, 1);
+const currentSkills = html.split('id="current-skills"')[1].split('id="planned-skills"')[0];
+const plannedSkills = html.split('id="planned-skills"')[1].split('</section>')[0];
+assert.ok(currentSkills.includes('JavaScript'));
+assert.ok(!/TypeScript|React/.test(currentSkills));
+assert.ok(plannedSkills.includes('TypeScript') && plannedSkills.includes('React'));
+for (const language of ['pl', 'nl', 'en']) {
+  assert.match(translations[language]['skills.focus'], /JavaScript/);
+  assert.ok(translations[language]['skills.plannedNote']);
+}
 assert.ok(html.includes('class="projects-grid"'));
 assert.ok(!html.includes('project-features'));
 assert.ok(!html.includes('101 test'));
