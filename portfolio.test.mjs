@@ -18,7 +18,10 @@ assert.ok(!html.includes('tsm-demo'));
 assert.ok(!/orderflow/i.test(html + script));
 assert.ok(html.includes('<h3>Support Ticket Manager</h3>'));
 for (const language of ['pl', 'nl', 'en']) {
-  assert.match(translations[language].pageTitle, /Frontend/);
+  assert.match(translations[language].pageTitle, /C#\/\.NET/);
+  assert.match(translations[language]['hero.description'], /React/);
+  assert.match(translations[language]['hero.description'], /ASP\.NET Core/);
+  assert.match(translations[language]['about.description'], /Support Ticket Manager/);
   assert.match(translations[language]['skills.description'], /JavaScript/);
 }
 assert.equal((html.match(/class="project-card"/g) || []).length, 1);

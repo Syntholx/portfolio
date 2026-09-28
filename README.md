@@ -1,6 +1,8 @@
 # Portfolio — Szymon Michałek
 
-Osobista strona prezentująca naukę frontendu aplikacyjnego: HTML, CSS i JavaScript.
+Osobista strona prezentująca naukę full-stack: React + TypeScript oraz C# / ASP.NET Core.
+Aktualna praktyka obejmuje HTML, CSS, JavaScript, DOM, formularze i stan interfejsu.
+Doświadczenie backendowe opisuje projekt TSM; React i TypeScript pozostają planem nauki.
 Jedynym prezentowanym projektem pozostaje backend Support Ticket Manager.
 OrderFlow usunięto z portfolio; repozytorium projektu pozostaje bez zmian.
 HTML, CSS i JavaScript; treści w językach PL/NL/EN.
