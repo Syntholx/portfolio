@@ -21,7 +21,8 @@ for (const language of ['pl', 'nl', 'en']) {
   assert.match(translations[language].pageTitle, /C#\/\.NET/);
   assert.match(translations[language]['hero.description'], /React/);
   assert.match(translations[language]['hero.description'], /ASP\.NET Core/);
-  assert.match(translations[language]['about.description'], /Support Ticket Manager/);
+  assert.ok(!translations[language]['about.description'].includes('Support Ticket Manager'));
+  assert.match(translations[language]['about.description'], /full-stack/);
   assert.match(translations[language]['skills.description'], /JavaScript/);
 }
 assert.equal((html.match(/class="project-card"/g) || []).length, 1);
