@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Szymon Michałek — C#/.NET i frontend</title>
+    <title>Szymon Michałek — frontend, React i TypeScript</title>
     <meta
       name="description"
-      content="Portfolio Szymona Michałka — nauka full-stack React i ASP.NET Core, aktualna praktyka HTML, CSS i JavaScript oraz projekt Support Ticket Manager."
+      content="Portfolio Szymona Michałka — nauka frontendu, Reacta i TypeScriptu na projekcie Support Ticket Manager."
     />
     <link rel="stylesheet" href="styles.css?v=10" />
   </head>
@@ -29,25 +29,27 @@
     </nav>
     <main>
       <section class="hero">
-        <p class="eyebrow" data-i18n="hero.eyebrow">Moja droga do full-stack development</p>
-        <h1 data-i18n="hero.title">Rozwijam aplikacje webowe — C#/.NET i frontend.</h1>
-        <p class="hero-description" data-i18n="hero.description">Uczę się tworzyć kompletne aplikacje: interaktywne interfejsy oraz API z bazą danych. Rozwijam się w kierunku full-stack React + ASP.NET Core.</p>
+        <p class="eyebrow" data-i18n="hero.eyebrow">Moja droga do frontend developmentu</p>
+        <h1 data-i18n="hero.title">Buduję interfejsy aplikacji webowych.</h1>
+        <p class="hero-description" data-i18n="hero.description">Uczę się frontendu, rozwijając klienta React + TypeScript dla Support Ticket Managera i łącząc go z API.</p>
         <a class="primary-link" href="#projekty" data-i18n="hero.link">Zobacz projekty</a>
       </section>
 
       <section class="about" id="o-mnie">
         <h2 data-i18n="about.title">O mnie</h2>
-        <p data-i18n="about.description">Uczę się programowania, budując aplikacje webowe. Najbardziej interesuje mnie tworzenie funkcji, z których użytkownik może faktycznie korzystać — od interfejsu po działanie całej operacji. Rozwijam się w kierunku full-stack, a w nauce stawiam na praktykę, zrozumienie kodu i coraz większą samodzielność.</p>
+        <p data-i18n="about.description">Uczę się programowania, budując interfejsy aplikacji webowych. Ćwiczę formularze, stan, responsywność i pracę z API. W nauce stawiam na praktykę, zrozumienie kodu i coraz większą samodzielność. Wcześniej pracowałem też nad backendem C#.</p>
       </section>
       <section class="skills" id="skills">
         <h2 data-i18n="skills.title">Technologie i kierunek nauki</h2>
-        <p data-i18n="skills.description">Ćwiczę HTML, CSS i JavaScript: responsywne układy, dostępność oraz logikę interfejsu.</p>
+        <p data-i18n="skills.description">Ćwiczę HTML, CSS, JavaScript, TypeScript i React przy rzeczywistych ekranach i integracji API.</p>
         <div class="skills-grid">
           <div class="skill-group" aria-labelledby="current-skills">
             <h3 id="current-skills" data-i18n="skills.current">Aktualnie rozwijam</h3>
-            <p class="skill-group-note" data-i18n="skills.focus">Teraz: JavaScript — DOM, formularze, zdarzenia i zarządzanie stanem.</p>
+            <p class="skill-group-note" data-i18n="skills.focus">Teraz: React i TypeScript — komponenty, formularze, stan i API; wciąż się ich uczę.</p>
             <ul class="skill-list">
               <li class="skill-item skill-item--current">JavaScript</li>
+              <li class="skill-item">TypeScript</li>
+              <li class="skill-item">React</li>
               <li class="skill-item">HTML</li>
               <li class="skill-item">CSS</li>
               <li class="skill-item">Git</li>
@@ -57,10 +59,9 @@
             <h3 id="planned-skills" data-i18n="skills.next">Kolejne kroki</h3>
             <p class="skill-group-note" data-i18n="skills.plannedNote">Plan nauki — nie deklaracja obecnych umiejętności.</p>
             <ul class="skill-list">
-              <li class="skill-item">TypeScript</li>
-              <li class="skill-item">React</li>
-              <li class="skill-item" data-i18n="skills.api">Integracja API</li>
               <li class="skill-item" data-i18n="skills.testing">Testowanie</li>
+              <li class="skill-item" data-i18n="skills.accessibility">Dostępność</li>
+              <li class="skill-item" data-i18n="skills.deployment">Wdrożenie aplikacji</li>
             </ul>
           </div>
         </div>
@@ -69,7 +70,15 @@
         <h2 data-i18n="projects.title">Projekty</h2>
         <div class="projects-grid">
           <article class="project-card">
-            <div class="project-card-header"><span class="project-kicker" data-i18n="projects.kicker">Projekt backendowy</span><span class="project-status">v1.0.0</span></div>
+            <div class="project-card-header"><span class="project-kicker" data-i18n="projects.frontendKicker">Projekt frontendowy</span><span class="project-status" data-i18n="projects.inProgress">W trakcie</span></div>
+            <h3>Support Ticket Manager — frontend</h3>
+            <p data-i18n="projects.frontendDescription">Klient aplikacji zgłoszeń rozwijany podczas nauki: rejestracja, logowanie, lista, tworzenie i szczegóły zgłoszeń. Korzysta z istniejącego API.</p>
+            <ul class="project-technologies" aria-label="Technologie"><li>React</li><li>TypeScript</li><li>CSS</li><li>API</li></ul>
+            <a class="project-code-status" href="https://github.com/Syntholx/support-ticket-manager/tree/main/frontend" target="_blank" rel="noopener noreferrer" data-i18n="projects.frontendCodeLink">Kod frontendu ↗</a>
+            <p class="project-note" data-i18n="projects.frontendNote">Projekt edukacyjny · działa lokalnie, bez publicznego demo</p>
+          </article>
+          <article class="project-card">
+            <div class="project-card-header"><span class="project-kicker" data-i18n="projects.kicker">Wcześniejszy projekt backendowy</span><span class="project-status">v1.0.0</span></div>
             <h3>Support Ticket Manager</h3>
             <p data-i18n="projects.description">Backend systemu zgłoszeń wsparcia. Umożliwia tworzenie i obsługę zgłoszeń, logowanie oraz dostęp zależny od roli użytkownika.</p>
             <ul class="project-technologies" aria-label="Technologie">
@@ -95,6 +104,6 @@
       </section>
     </main>
     <footer>© 2026 Szymon Michałek</footer>
-    <script src="script.js?v=16" defer></script>
+    <script src="script.js?v=17" defer></script>
   </body>
 </html>

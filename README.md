@@ -1,20 +1,21 @@
 # Portfolio — Szymon Michałek
 
-Osobista strona prezentująca naukę full-stack: React + TypeScript oraz C# / ASP.NET Core.
-Aktualna praktyka obejmuje HTML, CSS, JavaScript, DOM, formularze i stan interfejsu.
-Doświadczenie backendowe opisuje projekt TSM; React i TypeScript pozostają planem nauki.
-Jedynym prezentowanym projektem pozostaje backend Support Ticket Manager.
+Osobista strona prezentująca naukę frontendu: HTML, CSS, JavaScript,
+TypeScript i React. Aktualna praktyka obejmuje formularze, stan interfejsu,
+responsywność i integrację z API w kliencie Support Ticket Managera.
+Wcześniejszy backend C# pozostaje osobnym projektem w portfolio.
 OrderFlow usunięto z portfolio; repozytorium projektu pozostaje bez zmian.
 HTML, CSS i JavaScript; treści w językach PL/NL/EN.
 
 Sekcja technologii oddziela aktualną praktykę od planowanych tematów.
-JavaScript jest bieżącym tematem, a TypeScript, React, API i testowanie planem,
-nie deklaracją opanowanych umiejętności. Układ grup przechodzi na jedną kolumnę
-na węższych ekranach. TSM pozostaje jedyną kartą projektu.
+React i TypeScript są obecnie ćwiczone, nie deklarowane jako opanowane.
+Testowanie, dostępność i wdrożenie są dalszymi celami. Układ grup przechodzi
+na jedną kolumnę na węższych ekranach. Frontend TSM ma osobną kartę projektu.
 
 ## Projekt TSM
 
-Portfolio prezentuje Support Ticket Manager v1.0.0: lokalne API z SQL Server,
+Portfolio prezentuje aktualny frontend TSM w React i TypeScript, uruchamiany
+lokalnie bez publicznego demo. Zachowano też backend TSM v1.0.0: lokalne API z SQL Server,
 EF Core, Identity, kontrolą właściciela, rolą Support i 101 testami.
 Link prowadzi do kodu oraz instrukcji uruchomienia na GitHubie.
 Nie deklarujemy publicznego API ani gotowości produkcyjnej.

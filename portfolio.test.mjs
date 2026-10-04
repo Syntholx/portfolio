@@ -18,21 +18,21 @@ assert.ok(!html.includes('tsm-demo'));
 assert.ok(!/orderflow/i.test(html + script));
 assert.ok(html.includes('<h3>Support Ticket Manager</h3>'));
 for (const language of ['pl', 'nl', 'en']) {
-  assert.match(translations[language].pageTitle, /C#\/\.NET/);
+  assert.match(translations[language].pageTitle, /frontend/);
   assert.match(translations[language]['hero.description'], /React/);
-  assert.match(translations[language]['hero.description'], /ASP\.NET Core/);
+  assert.match(translations[language]['hero.description'], /TypeScript/);
   assert.ok(!translations[language]['about.description'].includes('Support Ticket Manager'));
-  assert.match(translations[language]['about.description'], /full-stack/);
+  assert.doesNotMatch(translations[language]['about.description'], /full-stack/);
   assert.match(translations[language]['skills.description'], /JavaScript/);
 }
-assert.equal((html.match(/class="project-card"/g) || []).length, 1);
+assert.equal((html.match(/class="project-card"/g) || []).length, 2);
 const currentSkills = html.split('id="current-skills"')[1].split('id="planned-skills"')[0];
 const plannedSkills = html.split('id="planned-skills"')[1].split('</section>')[0];
 assert.ok(currentSkills.includes('JavaScript'));
-assert.ok(!/TypeScript|React/.test(currentSkills));
-assert.ok(plannedSkills.includes('TypeScript') && plannedSkills.includes('React'));
+assert.ok(currentSkills.includes('TypeScript') && currentSkills.includes('React'));
+assert.ok(!/TypeScript|React/.test(plannedSkills));
 for (const language of ['pl', 'nl', 'en']) {
-  assert.match(translations[language]['skills.focus'], /JavaScript/);
+  assert.match(translations[language]['skills.focus'], /React/);
   assert.ok(translations[language]['skills.plannedNote']);
 }
 assert.ok(html.includes('class="projects-grid"'));
@@ -43,6 +43,7 @@ assert.ok(css.includes('grid-template-columns: minmax(0, 1fr)'));
 assert.ok(css.includes('grid-template-columns: 1fr'));
 assert.ok(!html.includes('github.com/Syntholx/order-flow'));
 assert.ok(html.includes('tree/v1.0.0'));
+assert.ok(html.includes('tree/main/frontend'));
 assert.ok(!script.includes('v0.7.0'));
 const redirects = readFileSync(new URL('./_redirects', import.meta.url), 'utf8');
 for (const route of ['/tsm-demo', '/tsm-demo/*', '/tsm', '/tsm/*']) {
@@ -50,4 +51,4 @@ for (const route of ['/tsm-demo', '/tsm-demo/*', '/tsm', '/tsm/*']) {
 }
 assert.ok(readFileSync(new URL('./tsm-demo/index.html', import.meta.url), 'utf8').length > 0);
 assert.ok(readFileSync(new URL('./tsm-demo/local.html', import.meta.url), 'utf8').length > 0);
-console.log('PASS: PL/NL/EN translations, v1.0.0 link, retired demo routes, preserved UI source.');
+console.log('PASS: frontend focus in PL/NL/EN, project links, retired demo routes, preserved UI source.');
