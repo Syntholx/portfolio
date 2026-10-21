@@ -13,6 +13,9 @@ type Translation = {
   viewProjects: string;
   contactDescription: string;
   emailLink: string;
+  copyEmail: string;
+  emailCopied: string;
+  emailCopyError: string;
   technologiesLabel: string;
   projectDescription: string;
   projectLink: string;
@@ -72,6 +75,9 @@ export const translations: Record<Language, Translation> = {
     viewProjects: "Zobacz projekty",
     contactDescription: "Chcesz porozmawiać o projekcie lub współpracy?",
     emailLink: "Napisz do mnie",
+    copyEmail: "Kopiuj adres",
+    emailCopied: "Adres e-mail został skopiowany.",
+    emailCopyError: "Nie udało się skopiować adresu. Zaznacz go i skopiuj ręcznie.",
     technologiesLabel: "Technologie projektu",
     projectDescription:
       "Aplikacja do zgłaszania problemów i obsługi zgłoszeń przez pracowników wsparcia.",
@@ -169,6 +175,9 @@ Ik werk met formulieren, interfacestatus en API’s en controleer de werking met
     viewProjects: "Bekijk projecten",
     contactDescription: "Wil je praten over een project of samenwerking?",
     emailLink: "Stuur me een e-mail",
+    copyEmail: "E-mailadres kopiëren",
+    emailCopied: "Het e-mailadres is gekopieerd.",
+    emailCopyError: "Kopiëren is niet gelukt. Selecteer het adres en kopieer het handmatig.",
     technologiesLabel: "Projecttechnologieën",
     projectDescription:
       "Een applicatie om problemen te melden en supporttickets te behandelen.",
@@ -265,6 +274,9 @@ I work with forms, interface state and APIs, and check how things work through m
     viewProjects: "View projects",
     contactDescription: "Would you like to discuss a project or collaboration?",
     emailLink: "Email me",
+    copyEmail: "Copy email address",
+    emailCopied: "Email address copied.",
+    emailCopyError: "Could not copy the address. Select it and copy it manually.",
     technologiesLabel: "Project technologies",
     projectDescription:
       "An application for reporting problems and managing support tickets.",

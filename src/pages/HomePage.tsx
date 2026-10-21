@@ -1,8 +1,28 @@
 import { ProjectCard } from "../components/ProjectCard";
 import { Language } from "../i118n/translations";
 import { translations } from "../i118n/translations";
+import { useState } from "react";
+
+const contactEmail = "contact@szymon-michalek.dev";
+
 export function HomePage(prop: { language: Language }) {
   const texts = translations[prop.language];
+  const [copyStatus, setCopyStatus] = useState<"idle" | "copied" | "error">("idle");
+  const [isCopying, setIsCopying] = useState(false);
+
+  async function copyEmail() {
+    if (isCopying) return;
+    setIsCopying(true);
+    setCopyStatus("idle");
+    try {
+      await navigator.clipboard.writeText(contactEmail);
+      setCopyStatus("copied");
+    } catch {
+      setCopyStatus("error");
+    } finally {
+      setIsCopying(false);
+    }
+  }
   return (
     <>
       <section className="py-[48px] md:py-[64px]">
@@ -28,12 +48,28 @@ export function HomePage(prop: { language: Language }) {
         <p className="mt-3 leading-relaxed text-[var(--text-muted)]">
           {texts.contactDescription}
         </p>
-        <a
-          href="mailto:contact@szymon-michalek.dev"
-          className="mt-6 inline-flex min-h-[44px] items-center justify-center rounded-[10px] border border-[var(--accent)] px-5 py-3 text-sm font-semibold text-[var(--accent)] transition-colors hover:bg-[var(--surface)] hover:text-[var(--accent-hover)]"
-        >
-          {texts.emailLink}
-        </a>
+        <p className="mt-4 break-words text-lg font-semibold select-all">
+          {contactEmail}
+        </p>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <a
+            href={`mailto:${contactEmail}`}
+            className="inline-flex min-h-[44px] items-center justify-center rounded-[10px] border border-[var(--accent)] px-5 py-3 text-sm font-semibold text-[var(--accent)] transition-colors hover:bg-[var(--surface)] hover:text-[var(--accent-hover)]"
+          >
+            {texts.emailLink}
+          </a>
+          <button
+            type="button"
+            onClick={copyEmail}
+            disabled={isCopying}
+            className="inline-flex min-h-[44px] cursor-pointer items-center justify-center rounded-[10px] border border-[var(--border)] bg-[var(--surface)] px-5 py-3 text-sm font-semibold text-[var(--text)] transition-colors hover:border-[var(--accent)] disabled:cursor-wait disabled:opacity-60"
+          >
+            {texts.copyEmail}
+          </button>
+        </div>
+        <p role="status" className="mt-3 min-h-5 text-sm leading-relaxed text-[var(--text-muted)]">
+          {copyStatus === "copied" ? texts.emailCopied : copyStatus === "error" ? texts.emailCopyError : ""}
+        </p>
       </section>
     </>
   );
