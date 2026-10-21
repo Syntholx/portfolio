@@ -1,57 +1,113 @@
-# Portfolio — Szymon Michałek
+# Portfolio Szymona Michałka
 
-Osobista strona prezentująca naukę frontendu: HTML, CSS, JavaScript,
-TypeScript i React. Aktualna praktyka obejmuje formularze, stan interfejsu,
-responsywność i integrację z API w kliencie Support Ticket Managera.
-Wcześniejszy backend C# pozostaje osobnym projektem w portfolio.
-OrderFlow usunięto z portfolio; repozytorium projektu pozostaje bez zmian.
-HTML, CSS i JavaScript; treści w językach PL/NL/EN.
+Portfolio w React i TypeScript prezentujące naukę frontendu oraz projekt
+Support Ticket Manager. Strona ma wersje PL, NL i EN, jasny i ciemny motyw
+oraz responsywny układ. Wybór języka i motywu jest zapisywany w localStorage.
+Przy pierwszym wejściu strona korzysta z języka przeglądarki i motywu systemowego;
+dla języków innych niż PL/NL/EN wybierany jest polski.
 
-Sekcja technologii oddziela aktualną praktykę od planowanych tematów.
-React i TypeScript są obecnie ćwiczone, nie deklarowane jako opanowane.
-Testowanie, dostępność i wdrożenie są dalszymi celami. Układ grup przechodzi
-na jedną kolumnę na węższych ekranach. Frontend TSM ma osobną kartę projektu.
+## Technologie i struktura
 
-## Projekt TSM
+React, TypeScript, React Router, Vite i Tailwind CSS.
 
-Portfolio prezentuje aktualny frontend TSM w React i TypeScript, uruchamiany
-lokalnie bez publicznego demo. Zachowano też backend TSM v1.0.0: lokalne API z SQL Server,
-EF Core, Identity, kontrolą właściciela, rolą Support i 101 testami.
-Link prowadzi do kodu oraz instrukcji uruchomienia na GitHubie.
-Nie deklarujemy publicznego API ani gotowości produkcyjnej.
+- `src/pages/` — strona główna, opis autora, prezentacja TSM i widok nieznanej trasy.
+- `src/components/` — wspólny nagłówek, stopka, karta projektu i przełącznik motywu.
+- `src/i118n/translations.ts` — treści w trzech językach.
+- `src/styles.css` — Tailwind i zmienne kolorów obu motywów.
+- `public/images/tsm/` — trzy zrzuty aplikacji na fikcyjnych danych.
+- `public/_redirects` — przekierowania dawnych adresów TSM.
 
-## Uruchomienie i publikacja
+Trasy aplikacji: `/`, `/o-mnie` i `/projekty/tsm/`. Nagłówek i stopka są wspólne.
+Pozostałe adresy obsługuje komponent z informacją o nieznalezionej stronie.
 
-Lokalnie otwórz index.html. Cloudflare Pages publikuje główną gałąź repozytorium
-przez istniejącą integrację GitHub. Nie zmieniono dostawcy hostingu.
+## Uruchomienie lokalne
 
-Plik _redirects kieruje dawne adresy /tsm-demo i /tsm-demo/* oraz /tsm i /tsm/*
-do sekcji projektów. Nie wystarczy samo usunięcie przycisku: przekierowania
-wyłączają również wejście przez dawny bezpośredni adres demo.
-Zasady: https://developers.cloudflare.com/pages/configuration/redirects/
+W głównym folderze repozytorium, z zainstalowanymi Node.js 24 LTS i npm:
 
-## Zachowany kod interfejsu
+```sh
+npm ci
+npm run dev
+```
 
-Katalog tsm-demo pozostaje w repozytorium na prośbę autora:
+Adres developerski: `http://localhost:5501`. Nie otwieraj `index.html` bezpośrednio.
+Samo portfolio nie wymaga API, bazy danych ani sekretów.
 
-- index.html, demo.js i demo.css — historyczna makieta na przykładowych danych;
-- local.html, local.js, local.css — wcześniejszy lokalny panel podłączony do API;
-- serve-local.mjs — pomocniczy serwer loopback;
-- local.test.mjs — testy logiki panelu z zastępczym DOM.
+Podgląd gotowej wersji:
 
-Lokalny panel nie obsługuje aktualnego logowania i sesji cookies.
-Po zabezpieczeniu API nie jest działającym klientem obecnej wersji TSM.
-Nie osłabiać ochrony API, żeby uruchomić stary panel.
-Makietę można przeglądać lokalnie, ale nie prezentujemy jej jako aktualnego produktu.
+```sh
+npm run build
+npm run preview
+```
 
-Interfejs i jego testy przygotowano z pomocą AI. Nie oznacza to zaliczenia
-frontendu ani samodzielnego wykonania całej aplikacji przez autora.
-Dalsze wykorzystanie wymaga osobnego zadania integracji i zabezpieczeń.
+Build trafia do `dist`, a podgląd działa na porcie 5501. Zatrzymaj wcześniej
+serwer developerski, jeśli korzysta z tego portu. Podgląd Vite nie emuluje
+przekierowań Cloudflare z pliku `_redirects`.
+
+## Prezentacja Support Ticket Managera
+
+Podstrona projektu opisuje aplikację React i TypeScript z API ASP.NET Core
+oraz SQL Server. Pokazuje role użytkownika i Supportu, obsługę zgłoszeń,
+rozwiązania techniczne i galerię listy, szczegółów oraz archiwum.
+Zdjęcia przedstawiają polski interfejs; podpisy i opisy alternatywne są tłumaczone.
+Kliknięcie otwiera pełny obraz w nowej karcie.
+
+[Kod i instrukcja uruchomienia TSM](https://github.com/Syntholx/support-ticket-manager).
+Demo online jest w przygotowaniu. Portfolio nie udostępnia API TSM.
+Projekt powstaje w ramach nauki, z prowadzeniem, pomocą AI i review;
+nie jest deklaracją samodzielnego wykonania całego systemu.
 
 ## Weryfikacja
 
-`node --check script.js`, `node portfolio.test.mjs` oraz `node tsm-demo/local.test.mjs`.
-Testy panelu korzystają z atrap; nie potwierdzają działania z chronionym API.
+```sh
+npm test
+```
+
+Polecenie uruchamia kontrolę TypeScript, build oraz sześć testów kontrolnych
+w `portfolio.test.mjs`. Testy sprawdzają kompletność i niepuste treści tłumaczeń,
+powiązanie zdjęć z podpisami i plikami, deklaracje tras, przekierowania,
+zasoby w buildzie oraz zachowanie historycznego kodu.
+Są to kontrole źródeł, danych i plików wynikowych, nie testy interakcji w przeglądarce.
+
+Ręcznie sprawdź przełączanie PL/NL/EN, motyw i zachowanie wyborów po odświeżeniu,
+nawigację klawiaturą, układ przy szerokości 375 px, otwieranie zdjęć oraz F5
+na podstronach. Po wdrożeniu sprawdź też dawne adresy i bezpośrednie wejście
+na `/projekty/tsm/` oraz `/o-mnie`.
+
+## Publikacja na Cloudflare Pages
+
+Istniejąca integracja z GitHub publikuje gałąź `main`. Push na tę gałąź
+uruchamia automatyczne wdrożenie.
+
+- Build command: `npm run build`.
+- Build output directory: `dist`.
+- Root directory: puste, czyli główny folder repozytorium.
+
+Vite kopiuje pliki z `public` do `dist`. Dawne adresy `/tsm-demo`, `/tsm-demo/*`,
+`/tsm` i `/tsm/*` przekierowują do `/#projekty`. Zdjęcia mają osobne adresy
+`/images/tsm/`, więc nie kolidują z tymi regułami.
+
+Nie dodajemy głównego `404.html`: Cloudflare Pages korzysta wtedy z domyślnej
+obsługi SPA i przekazuje trasy aplikacji do `index.html`. Widok nieznanej trasy
+w React nie oznacza odpowiedzi HTTP 404.
+[Dokumentacja obsługi SPA](https://developers.cloudflare.com/pages/configuration/serving-pages/#single-page-application-spa-rendering)
+i [przekierowań](https://developers.cloudflare.com/pages/configuration/redirects/).
+
+## Zachowany kod historyczny
+
+Główne `script.js` i `styles.css` pochodzą ze starego portfolio i nie są używane
+przez wersję React. Katalog `tsm-demo` pozostaje w repozytorium na prośbę autora:
+zawiera makietę na przykładowych danych oraz wcześniejszy lokalny panel API.
+Pliki te nie trafiają do `dist`.
+
+Stary panel nie obsługuje aktualnego logowania i sesji cookies TSM.
+Nie osłabiać ochrony API, żeby go uruchomić. Jego testy można uruchomić osobno:
+
+```sh
+npm run test:legacy
+```
+
+Testy historycznego panelu korzystają z atrap i nie potwierdzają integracji
+z obecnym chronionym API.
 
 ## Kontakt
 
