@@ -86,3 +86,16 @@ test('historical TSM interfaces remain in the repository', () => {
     assert.ok(exists(`./tsm-demo/${file}`), file);
   }
 });
+
+test('both project views link to the live HTTPS demo in a separate tab', () => {
+  for (const path of ['./src/components/ProjectCard.tsx', './src/pages/TsmProjectPage.tsx']) {
+    const source = read(path);
+    const links = [...source.matchAll(/<a\b[^>]*>[\s\S]*?<\/a>/g)].map((match) => match[0]);
+    const demo = links.find((link) => link.includes('href="https://tsm.szymon-michalek.dev"'));
+    assert.ok(demo, path);
+    assert.match(demo, /target="_blank"/);
+    assert.match(demo, /rel="noopener noreferrer"/);
+    assert.ok(demo.includes('{texts.demoLink}'));
+  }
+  for (const texts of Object.values(translations)) assert.ok(texts.demoLink.trim());
+});

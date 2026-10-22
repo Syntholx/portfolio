@@ -22,6 +22,7 @@ type Translation = {
   projectNote: string;
   backProjects: string;
   codeLink: string;
+  demoLink: string;
   notFoundTitle: string;
   notFoundDescription: string;
   backHome: string;
@@ -82,9 +83,10 @@ export const translations: Record<Language, Translation> = {
     projectDescription:
       "Aplikacja do zgłaszania problemów i obsługi zgłoszeń przez pracowników wsparcia.",
     projectLink: "Poznaj projekt",
-    projectNote: "Projekt edukacyjny. Demo online w przygotowaniu.",
+    projectNote: "Projekt edukacyjny. Publiczne demo z kontami Użytkownik i Support.",
     backProjects: "Wróć do projektów",
     codeLink: "Zobacz kod i dokumentację",
+    demoLink: "Uruchom demo",
     notFoundTitle: "Nie znaleziono strony",
     notFoundDescription:
       "Podany adres nie istnieje. Wróć na stronę główną, aby zobaczyć projekty.",
@@ -104,7 +106,7 @@ export const translations: Record<Language, Translation> = {
     projectIntro:
       "Od zgłoszenia problemu do zakończenia obsługi. Aplikacja łączy panel użytkownika i narzędzia pracownika wsparcia we wspólnym przepływie pracy — z aktualnym statusem, priorytetem i archiwum spraw.",
     projectStatus:
-      "Projekt edukacyjny · działa lokalnie · demo online w przygotowaniu",
+      "Publiczne demo · wspólne konta Użytkownik i Support · fikcyjne dane przywracane codziennie",
     rolesTitle: "Jeden proces, dwie perspektywy",
     rolesIntro:
       "Użytkownik śledzi własne sprawy, a Support zarządza kolejką zgłoszeń. Dostęp do danych i operacji kontroluje API, nie tylko widoczność przycisków w interfejsie.",
@@ -143,7 +145,7 @@ export const translations: Record<Language, Translation> = {
     contribution:
       "Frontend rozwijałem podczas prowadzonej nauki, korzystając z kontraktów, przykładów i review AI. Implementowałem ekrany, integrację API i testy. Wcześniejsza praca nad backendem C# pomogła mi zrozumieć przepływ danych między interfejsem a serwerem. Projekt nie powstał całkowicie samodzielnie.",
     limitations:
-      "Kolejnym etapem jest publiczne demo z fikcyjnymi danymi. Obecnie aplikacja wymaga lokalnego uruchomienia. Wyszukiwanie i sortowanie dotyczą pobranej strony zgłoszeń, nie całej bazy. Szczegóły uruchomienia i pozostałe ograniczenia opisuje README projektu.",
+      "Demo korzysta ze wspólnych kont i fikcyjnych danych przywracanych codziennie. Nie wpisuj danych osobowych ani poufnych informacji. Rejestracja, odzyskiwanie hasła i wysyłka e-maili są w demo wyłączone; pełna wersja lokalna zachowuje te funkcje. Wyszukiwanie i sortowanie dotyczą pobranej strony zgłoszeń, nie całej bazy.",
     homeMeta:
       "Portfolio Szymona Michałka — aplikacje w React i TypeScript, integracja API i testy.",
     aboutMeta:
@@ -182,9 +184,10 @@ Ik werk met formulieren, interfacestatus en API’s en controleer de werking met
     projectDescription:
       "Een applicatie om problemen te melden en supporttickets te behandelen.",
     projectLink: "Bekijk het project",
-    projectNote: "Leerproject. Online demo in voorbereiding.",
+    projectNote: "Leerproject. Publieke demo met accounts voor gebruiker en support.",
     backProjects: "Terug naar projecten",
     codeLink: "Bekijk code en documentatie",
+    demoLink: "Open de demo",
     notFoundTitle: "Pagina niet gevonden",
     notFoundDescription:
       "Dit adres bestaat niet. Ga terug naar de startpagina om de projecten te bekijken.",
@@ -203,7 +206,7 @@ Ik werk met formulieren, interfacestatus en API’s en controleer de werking met
     projectKicker: "Webapplicatieproject",
     projectIntro:
       "Van het melden van een probleem tot het afronden van de behandeling. De applicatie verbindt een gebruikerspaneel met de tools van supportmedewerkers in één werkproces, met een actuele status, prioriteit en ticketarchief.",
-    projectStatus: "Leerproject · draait lokaal · online demo in voorbereiding",
+    projectStatus: "Publieke demo · gedeelde accounts voor gebruiker en support · fictieve gegevens worden dagelijks hersteld",
     rolesTitle: "Eén proces, twee perspectieven",
     rolesIntro:
       "Gebruikers volgen hun eigen tickets, terwijl Support de volledige wachtrij beheert. De API controleert de toegang tot gegevens en acties; beveiliging berust niet alleen op zichtbare knoppen.",
@@ -242,7 +245,7 @@ Ik werk met formulieren, interfacestatus en API’s en controleer de werking met
     contribution:
       "Ik ontwikkelde de frontend tijdens een begeleid leertraject, met specificaties, voorbeelden en AI-review. Ik implementeerde schermen, API-integratie en tests. Eerder werk aan de C#-backend hielp me de gegevensstroom tussen interface en server te begrijpen. Het project is niet volledig zelfstandig gemaakt.",
     limitations:
-      "De volgende stap is een publieke demo met fictieve gegevens. Momenteel moet de applicatie lokaal worden gestart. Zoeken en sorteren werken alleen op de opgehaalde pagina met tickets, niet op de volledige database. De README beschrijft de installatie en overige beperkingen.",
+      "De demo gebruikt gedeelde accounts en fictieve gegevens die dagelijks worden hersteld. Voer geen persoonsgegevens of vertrouwelijke informatie in. Registratie, wachtwoordherstel en e-mailverzending zijn in de demo uitgeschakeld; de volledige lokale versie behoudt deze functies. Zoeken en sorteren werken alleen op de opgehaalde pagina met tickets, niet op de volledige database.",
     homeMeta:
       "Portfolio van Szymon Michałek — applicaties met React en TypeScript, API-integratie en tests.",
     aboutMeta:
@@ -281,9 +284,10 @@ I work with forms, interface state and APIs, and check how things work through m
     projectDescription:
       "An application for reporting problems and managing support tickets.",
     projectLink: "Explore the project",
-    projectNote: "Learning project. Online demo in preparation.",
+    projectNote: "Learning project. Public demo with user and support accounts.",
     backProjects: "Back to projects",
     codeLink: "View code and documentation",
+    demoLink: "Launch demo",
     notFoundTitle: "Page not found",
     notFoundDescription:
       "This address does not exist. Return to the home page to explore the projects.",
@@ -303,7 +307,7 @@ I work with forms, interface state and APIs, and check how things work through m
     projectIntro:
       "From reporting a problem to completing its resolution workflow. The application connects a user dashboard with support staff tools in a shared workflow, with an up-to-date status, priority and ticket archive.",
     projectStatus:
-      "Learning project · runs locally · online demo in preparation",
+      "Public demo · shared user and support accounts · fictional data restored daily",
     rolesTitle: "One workflow, two perspectives",
     rolesIntro:
       "Users follow their own tickets, while Support manages the full queue. The API controls access to data and actions; security does not rely solely on which buttons are visible.",
@@ -342,7 +346,7 @@ I work with forms, interface state and APIs, and check how things work through m
     contribution:
       "I developed the frontend through guided learning, using specifications, examples and AI review. I implemented screens, API integration and tests. Earlier work on the C# backend helped me understand the flow of data between the interface and the server. The project was not built entirely independently.",
     limitations:
-      "The next step is a public demo with fictional data. Currently, the application must be run locally. Search and sorting apply to the fetched page of tickets, not the entire database. The project README covers setup and other limitations.",
+      "The demo uses shared accounts and fictional data restored daily. Do not enter personal or confidential information. Registration, password recovery and email delivery are disabled in the demo; the full local version retains these features. Search and sorting apply to the fetched page of tickets, not the entire database.",
     homeMeta:
       "Szymon Michałek portfolio — React and TypeScript applications, API integration and testing.",
     aboutMeta:

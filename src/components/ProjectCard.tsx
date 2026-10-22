@@ -18,12 +18,22 @@ export function ProjectCard(props: { language: Language }) {
         <li>ASP.NET Core</li>
         <li> SQL Server</li>
       </ul>
+      <div className="mt-6 flex flex-wrap gap-3">
       <a
         href="/projekty/tsm/"
-        className="mt-6 inline-flex min-h-[44px] items-center justify-center rounded-[10px] bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--accent-hover)]"
+        className="inline-flex min-h-[44px] items-center justify-center rounded-[10px] border border-[var(--accent)] px-5 py-3 text-sm font-semibold text-[var(--accent)] transition-colors hover:text-[var(--accent-hover)]"
       >
         {texts.projectLink}
       </a>
+      <a
+        href="https://tsm.szymon-michalek.dev"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex min-h-[44px] items-center justify-center rounded-[10px] bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--accent-hover)]"
+      >
+        {texts.demoLink}
+      </a>
+      </div>
       <p className="mt-4 text-sm leading-relaxed text-[var(--text-muted)]">
         {texts.projectNote}
       </p>

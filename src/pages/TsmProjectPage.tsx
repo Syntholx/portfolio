@@ -34,14 +34,24 @@ export function TsmProjectPage(props: { language: Language }) {
           <li>Vitest</li>
         </ul>
 
+        <div className="mt-8 flex flex-wrap gap-3">
+        <a
+          href="https://tsm.szymon-michalek.dev"
+          rel="noopener noreferrer"
+          target="_blank"
+          className="inline-flex min-h-[44px] items-center justify-center rounded-[10px] bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--accent-hover)]"
+        >
+          {texts.demoLink}
+        </a>
         <a
           href="https://github.com/Syntholx/support-ticket-manager"
           rel="noopener noreferrer"
           target="_blank"
-          className="mt-8 inline-flex min-h-[44px] items-center justify-center rounded-[10px] bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--accent-hover)]"
+          className="inline-flex min-h-[44px] items-center justify-center rounded-[10px] border border-[var(--accent)] px-5 py-3 text-sm font-semibold text-[var(--accent)] transition-colors hover:text-[var(--accent-hover)]"
         >
           {texts.codeLink}
         </a>
+        </div>
         <p className="mt-4 text-sm leading-relaxed text-[var(--text-muted)]">
           {texts.projectStatus}
         </p>
