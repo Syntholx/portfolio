@@ -52,7 +52,11 @@ Zdjęcia przedstawiają polski interfejs; podpisy i opisy alternatywne są tłum
 Kliknięcie otwiera pełny obraz w nowej karcie.
 
 [Kod i instrukcja uruchomienia TSM](https://github.com/Syntholx/support-ticket-manager).
-Demo online jest w przygotowaniu. Portfolio nie udostępnia API TSM.
+[Publiczne demo TSM](https://tsm.szymon-michalek.dev) działa na osobnym VPS.
+Portfolio zawiera linki do demo na karcie projektu i jego podstronie.
+Demo ma wspólne konta Użytkownik i Support oraz fikcyjne dane przywracane codziennie.
+Nie wpisuj danych osobowych ani poufnych informacji. Rejestracja, odzyskiwanie
+hasła i wysyłka e-maili są w demo wyłączone; pełna wersja lokalna je zachowuje.
 Projekt powstaje w ramach nauki, z prowadzeniem, pomocą AI i review;
 nie jest deklaracją samodzielnego wykonania całego systemu.
 
@@ -62,10 +66,10 @@ nie jest deklaracją samodzielnego wykonania całego systemu.
 npm test
 ```
 
-Polecenie uruchamia kontrolę TypeScript, build oraz sześć testów kontrolnych
+Polecenie uruchamia kontrolę TypeScript, build oraz siedem testów kontrolnych
 w `portfolio.test.mjs`. Testy sprawdzają kompletność i niepuste treści tłumaczeń,
 powiązanie zdjęć z podpisami i plikami, deklaracje tras, przekierowania,
-zasoby w buildzie oraz zachowanie historycznego kodu.
+zasoby w buildzie, odnośniki do publicznego demo oraz brak usuniętej makiety.
 Są to kontrole źródeł, danych i plików wynikowych, nie testy interakcji w przeglądarce.
 
 Ręcznie sprawdź przełączanie PL/NL/EN, motyw i zachowanie wyborów po odświeżeniu,
@@ -92,22 +96,13 @@ w React nie oznacza odpowiedzi HTTP 404.
 [Dokumentacja obsługi SPA](https://developers.cloudflare.com/pages/configuration/serving-pages/#single-page-application-spa-rendering)
 i [przekierowań](https://developers.cloudflare.com/pages/configuration/redirects/).
 
-## Zachowany kod historyczny
+## Historia interfejsu
 
 Główne `script.js` i `styles.css` pochodzą ze starego portfolio i nie są używane
-przez wersję React. Katalog `tsm-demo` pozostaje w repozytorium na prośbę autora:
-zawiera makietę na przykładowych danych oraz wcześniejszy lokalny panel API.
-Pliki te nie trafiają do `dist`.
-
-Stary panel nie obsługuje aktualnego logowania i sesji cookies TSM.
-Nie osłabiać ochrony API, żeby go uruchomić. Jego testy można uruchomić osobno:
-
-```sh
-npm run test:legacy
-```
-
-Testy historycznego panelu korzystają z atrap i nie potwierdzają integracji
-z obecnym chronionym API.
+przez wersję React ani kopiowane do `dist`. Historyczny katalog `tsm-demo`
+z makietą i dawnym lokalnym klientem został usunięty. Można odzyskać go
+z historii Git. Przekierowania dawnych adresów pozostają aktywne;
+aktualna galeria znajduje się w `public/images/tsm/`, a aplikacja na osobnej subdomenie.
 
 ## Kontakt
 

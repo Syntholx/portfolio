@@ -4,7 +4,6 @@
   "description": "Portfolio Szymona Michałka w React i TypeScript: prezentacja Support Ticket Managera, języki PL/NL/EN oraz jasny i ciemny motyw.",
   "scripts": {
     "test": "npm run build && node --test portfolio.test.mjs",
-    "test:legacy": "node tsm-demo/local.test.mjs",
     "dev": "vite --port 5501 --strictPort",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview --port 5501 --strictPort"

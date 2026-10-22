@@ -81,10 +81,10 @@ test('build contains bundled assets and allows Cloudflare default SPA fallback',
   }
 });
 
-test('historical TSM interfaces remain in the repository', () => {
-  for (const file of ['index.html', 'demo.js', 'demo.css', 'local.html', 'local.js', 'local.css', 'serve-local.mjs', 'local.test.mjs']) {
-    assert.ok(exists(`./tsm-demo/${file}`), file);
-  }
+test('retired TSM mockup is absent from source and deployment', () => {
+  assert.ok(!exists('./tsm-demo/index.html'));
+  assert.ok(!exists('./tsm-demo/local.html'));
+  assert.ok(!exists('./dist/tsm-demo'));
 });
 
 test('both project views link to the live HTTPS demo in a separate tab', () => {
